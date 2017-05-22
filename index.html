@@ -21,30 +21,38 @@
       padding-right: 0;
       padding-left: 0;
   }
-  /*footer {
+  footer {
+  }
+  footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 100px;
     color: #000;
-  }*/
+    background-color: #007090;
+  }
   .graduation-wrapper {
     position: relative;
     width: 100%;
     height: 100%;
+    background: url(./image/big-theme.png) 0 0 no-repeat;
+    background-size: 100%;
   }
   .news,
   .ceremony,
   .movie,
-  .process,
   .activity,
   .contact,
   .information {
     /*background: url(./image/bg.jpg) 0 0 no-repeat;*/
     /*background-size: contain;*/
-    height: 300px;
+    height: 500px;
+    /*margin-bottom: 150px;*/
   }
-  .news {
+  .process {
+
+  }
+  /*.news {
     background-color: #EEE;
   }
   .ceremony {
@@ -61,14 +69,31 @@
   }
   .contact {
     background-color: #000;
-  }
+  }*/
   .information {
+  }
+  .information h2 {
+    font-size: 30px;
+  }
+  .information-img {
     background-color: #EEE;
+    background: url(./image/information.jpg) 0 0 no-repeat;
+    background-size: 100%;
+    height: 500px;
   }
   .main {
     position: absolute;
     width: 100%;
     top: 50px;
+    /*background-color: #337AB7;*/
+  }
+  .navbar-inverse .navbar-brand {
+    font-size: 20px;
+    color: #FFF;
+  }
+  .navbar-inverse {
+    background-color: #337AB7;
+    border-color: #337AB7;
   }
   .nav-tabs {
     border-bottom: none;
@@ -85,11 +110,45 @@
   }
   .nav-tabs > li.active > a,
   .nav-tabs >li.active >a:hover {
-    background-color: #EEE;
-    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.26);
+  }
+  .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #FFF;
+    border: 1px solid rgba(255, 255, 255, 0.26);
+  }
+  .big-theme {
+    /*background: url(./image/big-theme.png) 0 0 no-repeat;
+    background-size: contain;*/
+    width: 50%;
+    height: 600px;
+    margin: 0 auto;
+    font-size: 60px;
+    font-weight: bold;
+    color: #EEE;
+  }
+  .footer-txt {
+    text-align: center;
+    line-height: 20px;
+    padding-top: 10px;
+    color: #EEE;
+  }
+  /*手機*/
+  @media screen and (max-width: 736px) {
+    .nav-tabs > li {
+      float: none;
+    }
+  }
+  .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #337AB7;
+  }
+  .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #3F9EEF;
+  }
+  .navbar-inverse .navbar-toggle {
+    border-color: #3F9EEF;
   }
 </style>
-  <body data-spy="scroll" data-target="#navbar-example" >
+  <body data-spy="scroll" data-target="#navbar-ifo" data-offset="10">
     <div class="loading"></div>
     <div class="graduation-wrapper">
       <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -101,18 +160,21 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">清中畢業網站</a>
+            <a class="navbar-brand" href="#">清水高中66屆畢典</a>
           </div>
-          <div id="navbar-example" class="collapse navbar-collapse">
-            <ul class="nav nav-tabs" role="tablist">
-              <li class="active"><a href="#news">最新消息</a></li>
-              <li><a href="#ceremony">典禮主題</a></li>
-              <li><a href="#movie">相關影片</a></li>
-              <li><a href="#process">典禮流程</a></li>
-              <li><a href="#activity">相關活動</a></li>
-              <li><a href="#contact">聯絡我們</a></li>
-              <!-- <li><a href="#information">交通資訊</a></li> -->
-            </ul>
+          <div id="navbar" class="collapse navbar-collapse">
+            <div id="navbar-ifo">
+              <ul class="nav nav-tabs" role="tablist">
+                <li id="news" class="active"><a href="#one">最新消息</a></li>
+                <li id="ceremony"><a href="#two">典禮主題</a></li>
+                <li id="movie"><a href="#tree">相關影片</a></li>
+                <li id="process"><a href="#four">典禮流程</a></li>
+                <li id="activity"><a href="#five">相關活動</a></li>
+                <li id="contact"><a href="#six">聯絡我們</a></li>
+                <li id="information"><a href="#seven">交通資訊</a></li>
+                <!-- <li><a href="#information">123.12</a></li> -->
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
@@ -120,7 +182,16 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div id="news" class="news">
+              <div class="big-theme">
+                 <p>從此。以後</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div id="one" class="news">
                 我是最新消息
               </div>
             </div>
@@ -129,7 +200,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div id="ceremony" class="ceremony">
+              <div id="two" class="ceremony">
                 我是典禮主題
               </div>
             </div>
@@ -138,7 +209,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div id="movie" class="movie">
+              <div id="tree" class="movie">
                 我是相關影片
               </div>
             </div>
@@ -147,52 +218,79 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div id="process" class="process">
-                我是典禮流程
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div id="activity" class="activity">
+              <div id="four" class="process">
                 <h2>典禮流程</h2>
                 <table class="table table-bordered">
                   <tr class="info">
                     <td>時間</td>
-                    <td>分鐘</td>
                     <td>內容</td>
                     <td>備註</td>
                   </tr>
                   <tr>
                     <td>7:30~8:00</td>
-                    <td>30</td>
                     <td>發放信紙與小卡、說明當日活動流程</td>
                     <td></td>
                   </tr>
                   <tr>
                     <td>8:10~9:30</td>
-                    <td>80</td>
                     <td>祝福牆、躲避球</td>
                     <td>瑜珈球</td>
                   </tr>
                   <tr>
                     <td>10:00~12:00</td>
-                    <td>120</td>
                     <td>畢典預演</td>
                     <td></td>
                   </tr>
                   <tr>
                     <td>13:00~16:00</td>
-                    <td>180</td>
                     <td>時光郵筒、告白傳情、大鳥巡班</td>
                     <td>14:00開始至祝福牆拍照</td>
                   </tr>
                   <tr>
                     <td>16:00~17:00</td>
-                    <td>60</td>
                     <td>發畢冊</td>
+                    <td></td>
+                  </tr>
+                </table>
+                <table class="table table-bordered">
+                  <tr class="info">
+                    <td>時間</td>
+                    <td>內容</td>
+                    <td>備註</td>
+                  </tr>
+                  <tr>
+                    <td>9:15~9:28</td>
+                    <td>畢業典禮開場</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>9:28~9:40</td>
+                    <td>來賓致詞</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>9:40~10:25</td>
+                    <td>頒發畢業證書及頒獎</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>10:25~11:26</td>
+                    <td>畢業活動</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>11:26~11:31</td>
+                    <td>畢業歌+校歌</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>11:31~12:00</td>
+                    <td>禮成</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>12:00~12:30</td>
+                    <td>校園巡禮</td>
                     <td></td>
                   </tr>
                 </table>
@@ -203,7 +301,21 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div id="contact" class="contact">
+              <div id="five" class="activity">
+                  <h2>相關活動</h2>
+                  <p>祝福牆</p>
+                  <p>班級競賽</p>
+                  <p>時光郵筒</p>
+                  <p>告白傳情</p>
+                  <p>畢業晚會</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div id="six" class="contact">
                 我是聯絡我們
               </div>
             </div>
@@ -212,28 +324,92 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div id="information" class="information">
-                交通資訊
+              <div id="seven" class="information">
+                <h2>交通資訊</h2>
+                <div class="information-img">
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="container">
+        <!-- <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <footer>
-                <p>Copyright © 2017 市立清水高中 66屆 畢聯會 </p>
-                  <p>清中 - 畢聯會公關組 健智</p>
-                  <p>背景圖片由 清中畢聯會影編組</p>
-              </footer>
             </div>
           </div>
-        </div>
+        </div> -->
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="footer-txt">
+                  <p>Copyright © 2017 市立清水高中 66屆 畢聯會 </p>
+                  <p>清中 - 畢聯會公關組 健智</p>
+                  <p>背景圖片由 清中畢聯會影編組</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+    $(function() {
+      $('#top').click(function() {
+        $('html,body').animate({scrollTop: '0px'}, 800);
+      });
+      $('#news').click(function() {
+        $('html,body').animate({scrollTop: $('.news').offset().top}, 300);
+      });
+      $('#ceremony').click(function() {
+        $('html,body').animate({scrollTop: $('.ceremony').offset().top}, 300);
+      });
+      $('#movie').click(function() {
+        $('html,body').animate({scrollTop: $('.movie').offset().top}, 300);
+      });
+      $('#process').click(function() {
+        $('html,body').animate({scrollTop: $('.process').offset().top}, 300);
+      });
+      $('#activity').click(function() {
+        $('html,body').animate({scrollTop: $('.activity').offset().top}, 300);
+      });
+      $('#contact').click(function() {
+        $('html,body').animate({scrollTop: $('.contact').offset().top}, 300);
+      });
+      $('#information').click(function() {
+        $('html,body').animate({scrollTop: $('.information').offset().top}, 300);
+      });
+    })
+    // $(function(){
+    //     // 先取得 #cart 及其 top 值
+    //     var $cart = $('#navbar'),
+    //       _top = $cart.offset().top;
+    //
+    //     // 當網頁捲軸捲動時
+    //     var $win = $(window).scroll(function(){
+    //       // 如果現在的 scrollTop 大於原本 #cart 的 top 時
+    //       if($win.scrollTop() >= _top){
+    //         // 如果 $cart 的座標系統不是 fixed 的話
+    //         if($cart.css('position')!='fixed'){
+    //           // 設定 #cart 的座標系統為 fixed
+    //           $cart.css({
+    //             position: 'fixed',
+    //             top: 0
+    //           });
+    //           $('.big-theme').hide();
+    //         }
+    //
+    //       }else{
+    //         // 還原 #cart 的座標系統為 absolute
+    //         $cart.css({
+    //           position: 'absolute'
+    //         });
+    //       }
+    //     });
+    // });
+      // $('body').scrollspy({ target: '#navbar-ifo' })
       // function changeClass(getValue) {
       //   var maxIndex = 7;
       //   for(x=0; x<maxIndex; x++) {
@@ -245,10 +421,10 @@
       //   }
       // }
 
-      $('body').scrollspy({ target: '#navbar-example' })
-      $('[data-spy="scroll"]').each(function () {
-        var $spy = $(this).scrollspy('refresh')
-      })
+      // $('body').scrollspy({ target: '#navbar-example' })
+      // $('[data-spy="scroll"]').each(function () {
+      //   var $spy = $(this).scrollspy('refresh')
+      // })
 
       // $(function(){
       //   removeSection = function(e) {
@@ -257,7 +433,7 @@
       //     var $spy = $(this).scrollspy('refresh')
       //     });
       // }
-      $("#myScrollspy").scrollspy();
+      // $("#myScrollspy").scrollspy();
 
       // $(function() {
         // for(var i =1; i<=6; i++) {
@@ -267,9 +443,6 @@
         //   });
         // }
       // })
-
-      // 標題文字動畫
-
     </script>
   </body>
 </html>
