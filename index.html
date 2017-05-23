@@ -106,7 +106,8 @@
     border-radius: 0;
   }
   .nav-tabs>li>a:hover {
-    color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    background-color: rgba(255, 255, 255, 0.26);
   }
   .nav-tabs > li.active > a,
   .nav-tabs >li.active >a:hover {
@@ -147,11 +148,23 @@
   .navbar-inverse .navbar-toggle {
     border-color: #3F9EEF;
   }
+  .navbar-fixed-top {
+    position: absolute;
+  }
 </style>
   <body data-spy="scroll" data-target="#navbar-ifo" data-offset="10">
     <div class="loading"></div>
     <div class="graduation-wrapper">
-      <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="big-theme">
+               <p>從此。以後</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav id="nav-wrapper" class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -179,15 +192,6 @@
         </div>
       </nav>
       <div class="main">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="big-theme">
-                 <p>從此。以後</p>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
@@ -382,33 +386,36 @@
         $('html,body').animate({scrollTop: $('.information').offset().top}, 300);
       });
     })
-    // $(function(){
-    //     // 先取得 #cart 及其 top 值
-    //     var $cart = $('#navbar'),
-    //       _top = $cart.offset().top;
-    //
-    //     // 當網頁捲軸捲動時
-    //     var $win = $(window).scroll(function(){
-    //       // 如果現在的 scrollTop 大於原本 #cart 的 top 時
-    //       if($win.scrollTop() >= _top){
-    //         // 如果 $cart 的座標系統不是 fixed 的話
-    //         if($cart.css('position')!='fixed'){
-    //           // 設定 #cart 的座標系統為 fixed
-    //           $cart.css({
-    //             position: 'fixed',
-    //             top: 0
-    //           });
-    //           $('.big-theme').hide();
-    //         }
-    //
-    //       }else{
-    //         // 還原 #cart 的座標系統為 absolute
-    //         $cart.css({
-    //           position: 'absolute'
-    //         });
-    //       }
-    //     });
-    // });
+    $(function(){
+        // 先取得 #cart 及其 top 值
+        var $cart = $('#nav-wrapper'),
+          _top = $cart.offset().top = 1;
+        // 當網頁捲軸捲動時
+        var $win = $(window).scroll(function(){
+          // 如果現在的 scrollTop 大於原本 #cart 的 top 時
+          if($win.scrollTop() >= _top){
+            // 如果 $cart 的座標系統不是 fixed 的話
+            if($cart.css('position')!='fixed'){
+              // 設定 #cart 的座標系統為 fixed
+              $cart.animate({height:"-10%"},500);
+              $cart.css({
+                position: 'fixed',
+                top: 0,
+                background: '#000'
+                // background: 'transparent'
+              });
+            }
+          }else{
+            // 還原 #cart 的座標系統為 absolute
+            $cart.animate({height:"10%"},500);
+            $cart.css({
+               position: 'absolute',
+               background: 'transparent'
+              // background: '#EEE'
+            });
+          }
+        });
+    });
       // $('body').scrollspy({ target: '#navbar-ifo' })
       // function changeClass(getValue) {
       //   var maxIndex = 7;
