@@ -13,6 +13,8 @@
 <style media="screen">
   body {
     position: relative;
+    background-color: #000;
+    color: #FFF;
   }
   html,body {
     height: 100%;
@@ -44,33 +46,23 @@
   .activity,
   .contact,
   .information {
-    /*background: url(./image/bg.jpg) 0 0 no-repeat;*/
-    /*background-size: contain;*/
-    height: 500px;
-    /*margin-bottom: 150px;*/
+    min-height: 300px;
   }
   .process {
 
   }
-  /*.news {
-    background-color: #EEE;
+  .news {
+    margin-top: 50px;
   }
-  .ceremony {
-    background-color: #EE0;
+  .news > .table-hover> tbody >tr:hover,
+  .news > .table-hover> tbody >tr:hover a {
+    color: #000;
   }
-  .movie {
-    background-color: #000;
+  .news a {
+    color: #FFF;
   }
-  .process {
-    background-color: #EEE;
-  }
-  .activity {
-    background-color: #FFF;
-  }
-  .contact {
-    background-color: #000;
-  }*/
   .information {
+    margin-bottom: 200px;
   }
   .information h2 {
     font-size: 30px;
@@ -78,7 +70,7 @@
   .information-img {
     background-color: #EEE;
     background: url(./image/information.jpg) 0 0 no-repeat;
-    background-size: 100%;
+    background-size: contain;
     height: 500px;
   }
   .main {
@@ -88,19 +80,24 @@
     /*background-color: #337AB7;*/
   }
   .navbar-inverse .navbar-brand {
+    display: block;
     font-size: 20px;
     color: #FFF;
+    font-weight: bold;
   }
   .navbar-inverse {
-    background-color: #337AB7;
-    border-color: #337AB7;
+    background-color: transparent;
+    border-color: transparent;
   }
   .nav-tabs {
+    position: absolute;
+    right: 50px;
     border-bottom: none;
   }
   .nav-tabs > li > a {
     color: #FFF;
     margin-top: 5px;
+    font-weight: bold;
   }
   .nav-tabs > li> a {
     border-radius: 0;
@@ -118,14 +115,28 @@
     border: 1px solid rgba(255, 255, 255, 0.26);
   }
   .big-theme {
-    /*background: url(./image/big-theme.png) 0 0 no-repeat;
-    background-size: contain;*/
     width: 50%;
     height: 600px;
-    margin: 0 auto;
+    margin: 0 auto 75px;
     font-size: 60px;
+    padding-top: 180px;
     font-weight: bold;
+    text-align: center;
     color: #EEE;
+  }
+  .origin-down {
+    display: block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border: 3px solid #FFF;
+    border-radius: 50%;
+    margin: 100px auto 0;
+    cursor: pointer;
+  }
+  .origin-down i {
+    color: #FFF;
+    font-size: 40px;
   }
   .footer-txt {
     text-align: center;
@@ -137,6 +148,12 @@
   @media screen and (max-width: 736px) {
     .nav-tabs > li {
       float: none;
+    }
+    .nav-tabs {
+      position: static;
+    }
+    .navbar-collapse {
+      background-color: #000;
     }
   }
   .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
@@ -153,17 +170,7 @@
   }
 </style>
   <body data-spy="scroll" data-target="#navbar-ifo" data-offset="10">
-    <div class="loading"></div>
     <div class="graduation-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="big-theme">
-               <p>從此。以後</p>
-            </div>
-          </div>
-        </div>
-      </div>
       <nav id="nav-wrapper" class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
@@ -178,14 +185,13 @@
           <div id="navbar" class="collapse navbar-collapse">
             <div id="navbar-ifo">
               <ul class="nav nav-tabs" role="tablist">
-                <li id="news" class="active"><a href="#one">最新消息</a></li>
+                <li id="news"><a href="#one">最新消息</a></li>
                 <li id="ceremony"><a href="#two">典禮主題</a></li>
                 <li id="movie"><a href="#tree">相關影片</a></li>
                 <li id="process"><a href="#four">典禮流程</a></li>
                 <li id="activity"><a href="#five">相關活動</a></li>
                 <li id="contact"><a href="#six">聯絡我們</a></li>
                 <li id="information"><a href="#seven">交通資訊</a></li>
-                <!-- <li><a href="#information">123.12</a></li> -->
               </ul>
             </div>
           </div>
@@ -195,8 +201,24 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
+              <div class="big-theme">
+                 <p>從此。以後</p>
+                 <a class="origin-down"><i class="glyphicon glyphicon-menu-down"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
               <div id="one" class="news">
-                我是最新消息
+                <h2>最新消息</h2>
+                <table class="table table-hover">
+                  <tr>
+                    <td>2017/5/24</td>
+                    <td><a href="https://goo.gl/forms/OFMBKBSArboKQQ4z2">清中必吃美食投票網站</a></td>
+                  </tr>
+                </table>
               </div>
             </div>
           </div>
@@ -205,7 +227,16 @@
           <div class="row">
             <div class="col-lg-12">
               <div id="two" class="ceremony">
-                我是典禮主題
+                <h2>典禮主題</h2>
+                <hr></hr>
+                <p>
+                    好久好久以前，斑斑陽光拉開童話的序幕。<br/>
+                    在揮灑青春汗水的操場跌倒後爬起來，正如同美人魚的勇敢。<br/>
+                    總是充滿朝氣、開朗活潑的我們，恰似小紅帽的活力。<br/>
+                    對未來毫不畏懼的我們，有著愛麗絲的冒險精神。<br/>
+                    流傳多年後的今天，我們帶著屬於自己永恆的童話，踏上人生的新旅途。<br/>
+                                                              從此，邁向以後。
+                </p>
               </div>
             </div>
           </div>
@@ -214,7 +245,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div id="tree" class="movie">
-                我是相關影片
+                <h2>相關影片</h2>
+                <p>敬請期待</p>
               </div>
             </div>
           </div>
@@ -320,7 +352,29 @@
           <div class="row">
             <div class="col-lg-12">
               <div id="six" class="contact">
-                我是聯絡我們
+                <h2>聯絡我們</h2>
+                <table>
+                  <tr>
+                    <td>主辦單位:</td>
+                    <td>台中市立清水高級中學學務處訓育組</td>
+                  </tr>
+                  <tr>
+                    <td>典禮主題:</td>
+                    <td>從此，以後</td>
+                  </tr>
+                  <tr>
+                    <td>典禮時間:</td>
+                    <td>2017年6月12日(一) 9:00~12:00</td>
+                  </tr>
+                  <tr>
+                    <td>典禮地點:</td>
+                    <td>台中市清水中山路90號</td>
+                  </tr>
+                  <tr>
+                    <td>聯絡電話:</td>
+                    <td>學校 04-26222116</td>
+                  </tr>
+                </table>
               </div>
             </div>
           </div>
@@ -389,7 +443,7 @@
     $(function(){
         // 先取得 #cart 及其 top 值
         var $cart = $('#nav-wrapper'),
-          _top = $cart.offset().top = 1;
+          _top = $cart.offset().top = 10;
         // 當網頁捲軸捲動時
         var $win = $(window).scroll(function(){
           // 如果現在的 scrollTop 大於原本 #cart 的 top 時
@@ -397,20 +451,24 @@
             // 如果 $cart 的座標系統不是 fixed 的話
             if($cart.css('position')!='fixed'){
               // 設定 #cart 的座標系統為 fixed
-              $cart.animate({height:"-10%"},500);
+              $cart.animate({height:"-3%"},500);
               $cart.css({
                 position: 'fixed',
                 top: 0,
-                background: '#000'
+                background: '#000',
+                'border-color': '#EEE',
+                'border-weight': '0.5px',
+                'border-style': 'solid'
                 // background: 'transparent'
               });
             }
           }else{
             // 還原 #cart 的座標系統為 absolute
-            $cart.animate({height:"10%"},500);
+            $cart.animate({height:"3%"},500);
             $cart.css({
                position: 'absolute',
-               background: 'transparent'
+               background: 'transparent',
+               'border-color': 'transparent'
               // background: '#EEE'
             });
           }
