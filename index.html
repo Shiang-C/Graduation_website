@@ -6,13 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+  <link rel="icon" href="./image/favicon.ico">
   <title>清水高中66屆畢典</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <style media="screen">
   body {
     position: relative;
+    background-color: #000;
+    color: #FFF;
+    font-family: '微軟正黑體'
   }
   html,body {
     height: 100%;
@@ -35,8 +38,8 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: url(./image/big-theme.png) 0 0 no-repeat;
-    background-size: 100%;
+    background: url(./image/big-theme.jpg) 0 0 no-repeat;
+    background-size: 100% 630px;
   }
   .news,
   .ceremony,
@@ -44,33 +47,52 @@
   .activity,
   .contact,
   .information {
-    /*background: url(./image/bg.jpg) 0 0 no-repeat;*/
-    /*background-size: contain;*/
-    height: 500px;
-    /*margin-bottom: 150px;*/
+    min-height: 300px;
   }
-  .process {
-
+  /*最新消息*/
+  .news {
+    margin-top: 50px;
   }
-  /*.news {
-    background-color: #EEE;
+  .news > h2 {
+    text-align: center;
   }
+  .news > .table-hover> tbody >tr:hover,
+  .news > .table-hover> tbody >tr:hover a {
+    color: #000;
+  }
+  .news table td {
+    text-align: center;
+    font-size: 2rem;
+    padding: 10px 0;
+  }
+  .new-date {
+    background-color: #FCF8E3;
+    color: #000;
+  }
+  .news table td.td-l {
+    text-align: left;
+    padding-left: 20px;
+  }
+  .news a {
+    display: block;
+    width: 200px;
+    height: 50px;
+    background: url(./image/text/link.png) 0 0 no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    color: #FFF;
+  }
+  /*典禮主題*/
   .ceremony {
-    background-color: #EE0;
+    text-align: center;
   }
-  .movie {
-    background-color: #000;
+  .ceremony p {
+    font-size: 2rem;
   }
-  .process {
-    background-color: #EEE;
-  }
-  .activity {
-    background-color: #FFF;
-  }
-  .contact {
-    background-color: #000;
-  }*/
+  /*交通資訊*/
   .information {
+    text-align: center;
+    margin-bottom: 200px;
   }
   .information h2 {
     font-size: 30px;
@@ -78,8 +100,33 @@
   .information-img {
     background-color: #EEE;
     background: url(./image/information.jpg) 0 0 no-repeat;
-    background-size: 100%;
+    background-size: contain;
     height: 500px;
+  }
+  /*相關影片*/
+  .movie {
+    text-align: center;
+  }
+  .movie p {
+    font-size: 5rem;
+  }
+  /*典禮流程*/
+  .process {
+    text-align: center;
+  }
+  .process .info {
+    color: #000;
+  }
+  /*相關活動*/
+  .activity {
+    text-align: center;
+  }
+  .activity p {
+    font-size: 2rem;
+  }
+  /*聯絡我們*/
+  .contact {
+    text-align: center;
   }
   .main {
     position: absolute;
@@ -88,25 +135,36 @@
     /*background-color: #337AB7;*/
   }
   .navbar-inverse .navbar-brand {
+    display: block;
     font-size: 20px;
     color: #FFF;
+    font-weight: bold;
+    width: 300px;
+    height: 50px;
+    background: url(./image/text/logo.png) 0 0 no-repeat;
+    background-size: 100%;
+    /*margin-right: 200px;*/
   }
   .navbar-inverse {
-    background-color: #337AB7;
-    border-color: #337AB7;
+    background-color: transparent;
+    border-color: transparent;
   }
   .nav-tabs {
+    position: absolute;
+    right: 100px;
     border-bottom: none;
   }
   .nav-tabs > li > a {
     color: #FFF;
     margin-top: 5px;
+    font-weight: bold;
   }
   .nav-tabs > li> a {
     border-radius: 0;
   }
   .nav-tabs>li>a:hover {
-    color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    background-color: rgba(255, 255, 255, 0.26);
   }
   .nav-tabs > li.active > a,
   .nav-tabs >li.active >a:hover {
@@ -117,14 +175,35 @@
     border: 1px solid rgba(255, 255, 255, 0.26);
   }
   .big-theme {
-    /*background: url(./image/big-theme.png) 0 0 no-repeat;
-    background-size: contain;*/
-    width: 50%;
+    width: 80%;
     height: 600px;
-    margin: 0 auto;
+    margin: 0 auto 75px;
     font-size: 60px;
+    padding-top: 100px;
     font-weight: bold;
+    text-align: center;
     color: #EEE;
+  }
+  .title-txt {
+    width: 100%;
+    height: 210px;
+    background: url(./image/text/From_then_on.png) 0 0 no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+  }
+  .origin-down {
+    display: block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border: 3px solid #FFF;
+    border-radius: 50%;
+    margin: 100px auto 0;
+    cursor: pointer;
+  }
+  .origin-down i {
+    color: #FFF;
+    font-size: 40px;
   }
   .footer-txt {
     text-align: center;
@@ -137,21 +216,20 @@
     .nav-tabs > li {
       float: none;
     }
+    .nav-tabs {
+      position: static;
+    }
+    .navbar-collapse {
+      background-color: #000;
+    }
   }
-  .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    border-color: #337AB7;
-  }
-  .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
-    background-color: #3F9EEF;
-  }
-  .navbar-inverse .navbar-toggle {
-    border-color: #3F9EEF;
+  .navbar-fixed-top {
+    position: absolute;
   }
 </style>
   <body data-spy="scroll" data-target="#navbar-ifo" data-offset="10">
-    <div class="loading"></div>
     <div class="graduation-wrapper">
-      <nav class="navbar navbar-inverse navbar-fixed-top">
+      <nav id="nav-wrapper" class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -160,19 +238,18 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">清水高中66屆畢典</a>
+            <a class="navbar-brand" href="#"></a>
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <div id="navbar-ifo">
               <ul class="nav nav-tabs" role="tablist">
-                <li id="news" class="active"><a href="#one">最新消息</a></li>
+                <li id="news"><a href="#one">最新消息</a></li>
                 <li id="ceremony"><a href="#two">典禮主題</a></li>
                 <li id="movie"><a href="#tree">相關影片</a></li>
                 <li id="process"><a href="#four">典禮流程</a></li>
                 <li id="activity"><a href="#five">相關活動</a></li>
                 <li id="contact"><a href="#six">聯絡我們</a></li>
                 <li id="information"><a href="#seven">交通資訊</a></li>
-                <!-- <li><a href="#information">123.12</a></li> -->
               </ul>
             </div>
           </div>
@@ -183,7 +260,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="big-theme">
-                 <p>從此。以後</p>
+                 <div class="title-txt"></div>
+                 <a class="origin-down" href="#one"><i class="glyphicon glyphicon-menu-down"></i></a>
               </div>
             </div>
           </div>
@@ -192,7 +270,18 @@
           <div class="row">
             <div class="col-lg-12">
               <div id="one" class="news">
-                我是最新消息
+                <h2>最新消息</h2>
+                <table class="table table-hover">
+                  <tr>
+                    <td class="new-date">5/22 ~ 5/29</td>
+                    <td class="td-l">
+                      身為清水高中的學生，想必大家都曾在晚自習的時候，糾結著晚餐要吃什麼，或是在路口思考
+著要去哪裡買點心。荏苒間，我們即將離開校園，畢聯會舉辦了「清中必吃美食大票選」，快來填
+寫表單，選出你們心中的Top three！
+                    </td>
+                  </tr>
+                </table>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScrufr5hGxmgwazn0mhqcSpTSTzrvNFl2_5pe2NwXeKsCDQTg/viewform?c=0&w=1"></a>
               </div>
             </div>
           </div>
@@ -201,7 +290,16 @@
           <div class="row">
             <div class="col-lg-12">
               <div id="two" class="ceremony">
-                我是典禮主題
+                <h2>典禮主題</h2>
+                <hr></hr>
+                <p>
+                    好久好久以前，斑斑陽光拉開童話的序幕。<br/>
+                    在揮灑青春汗水的操場跌倒後爬起來，正如同美人魚的勇敢。<br/>
+                    總是充滿朝氣、開朗活潑的我們，恰似小紅帽的活力。<br/>
+                    對未來毫不畏懼的我們，有著愛麗絲的冒險精神。<br/>
+                    流傳多年後的今天，我們帶著屬於自己永恆的童話，踏上人生的新旅途。<br/>
+                                                              從此，邁向以後。
+                </p>
               </div>
             </div>
           </div>
@@ -210,7 +308,9 @@
           <div class="row">
             <div class="col-lg-12">
               <div id="tree" class="movie">
-                我是相關影片
+                <h2>相關影片</h2>
+                <hr/>
+                <p>敬請期待</p>
               </div>
             </div>
           </div>
@@ -220,6 +320,7 @@
             <div class="col-lg-12">
               <div id="four" class="process">
                 <h2>典禮流程</h2>
+                <hr/>
                 <table class="table table-bordered">
                   <tr class="info">
                     <td>時間</td>
@@ -303,6 +404,7 @@
             <div class="col-lg-12">
               <div id="five" class="activity">
                   <h2>相關活動</h2>
+                  <hr/>
                   <p>祝福牆</p>
                   <p>班級競賽</p>
                   <p>時光郵筒</p>
@@ -316,7 +418,30 @@
           <div class="row">
             <div class="col-lg-12">
               <div id="six" class="contact">
-                我是聯絡我們
+                <h2>聯絡我們</h2>
+                <hr/>
+                <table>
+                  <tr>
+                    <td>主辦單位:</td>
+                    <td>台中市立清水高級中學學務處訓育組</td>
+                  </tr>
+                  <tr>
+                    <td>典禮主題:</td>
+                    <td>從此，以後</td>
+                  </tr>
+                  <tr>
+                    <td>典禮時間:</td>
+                    <td>2017年6月12日(一) 9:00~12:00</td>
+                  </tr>
+                  <tr>
+                    <td>典禮地點:</td>
+                    <td>台中市清水中山路90號</td>
+                  </tr>
+                  <tr>
+                    <td>聯絡電話:</td>
+                    <td>學校 04-26222116</td>
+                  </tr>
+                </table>
               </div>
             </div>
           </div>
@@ -326,6 +451,7 @@
             <div class="col-lg-12">
               <div id="seven" class="information">
                 <h2>交通資訊</h2>
+                <hr/>
                 <div class="information-img">
                 </div>
               </div>
@@ -382,33 +508,38 @@
         $('html,body').animate({scrollTop: $('.information').offset().top}, 300);
       });
     })
-    // $(function(){
-    //     // 先取得 #cart 及其 top 值
-    //     var $cart = $('#navbar'),
-    //       _top = $cart.offset().top;
-    //
-    //     // 當網頁捲軸捲動時
-    //     var $win = $(window).scroll(function(){
-    //       // 如果現在的 scrollTop 大於原本 #cart 的 top 時
-    //       if($win.scrollTop() >= _top){
-    //         // 如果 $cart 的座標系統不是 fixed 的話
-    //         if($cart.css('position')!='fixed'){
-    //           // 設定 #cart 的座標系統為 fixed
-    //           $cart.css({
-    //             position: 'fixed',
-    //             top: 0
-    //           });
-    //           $('.big-theme').hide();
-    //         }
-    //
-    //       }else{
-    //         // 還原 #cart 的座標系統為 absolute
-    //         $cart.css({
-    //           position: 'absolute'
-    //         });
-    //       }
-    //     });
-    // });
+    $(function(){
+        // 先取得 #cart 及其 top 值
+        var $cart = $('#nav-wrapper'),
+          _top = $cart.offset().top = 10;
+        // 當網頁捲軸捲動時
+        var $win = $(window).scroll(function(){
+          // 如果現在的 scrollTop 大於原本 #cart 的 top 時
+          if($win.scrollTop() >= _top){
+            // 如果 $cart 的座標系統不是 fixed 的話
+            if($cart.css('position')!='fixed'){
+              // 設定 #cart 的座標系統為 fixed
+              $cart.animate({height:"3%"},500);
+              $cart.css({
+                position: 'fixed',
+                top: 0,
+                background: '#000',
+                'border-color': '#EEE',
+                'border-weight': '0.5px',
+                'border-style': 'solid'
+              });
+            }
+          }else{
+            // 還原 #cart 的座標系統為 absolute
+            $cart.animate({height:"-3%"},500);
+            $cart.css({
+               position: 'absolute',
+               background: 'transparent',
+               'border-color': 'transparent'
+            });
+          }
+        });
+    });
       // $('body').scrollspy({ target: '#navbar-ifo' })
       // function changeClass(getValue) {
       //   var maxIndex = 7;
