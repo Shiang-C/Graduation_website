@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+  <link rel="icon" href="./image/favicon.ico">
   <title>清水高中66屆畢典</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<style media="screen">
+<style>
   body {
     position: relative;
     background-color: #000;
@@ -124,11 +124,32 @@
     text-align: center;
   }
   .activity p {
-    font-size: 2rem;
+    font-size: 4rem;
   }
   /*聯絡我們*/
   .contact {
     text-align: center;
+  }
+  .contact table {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 2rem;
+  }
+  .contact a.fb-img,
+  .contact a.ig-img {
+    display: block;
+    width: 80px;
+    height: 70px;
+  }
+  .fb-img {
+    background: url(./image/fb.png) 0 0 no-repeat;
+    background-size: contain;
+  }
+  .ig-img {
+    background: url(./image/ig.png) 0 0 no-repeat;
+    background-size: contain;
+    margin-top: 20px;
   }
   .main {
     position: absolute;
@@ -228,12 +249,16 @@
       width: 100%;
       margin: 0 auto;
     }
+    .contact table {
+      width: 100%;
+    }
   }
   .navbar-fixed-top {
       position: absolute;
   }
 </style>
   <body data-spy="scroll" data-target="#navbar-ifo" data-offset="10">
+    <a href="###" class="abgne_gotoheader">GOTO</a>
     <div class="graduation-wrapper">
       <nav id="nav-wrapper" class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -287,7 +312,7 @@
                     </td>
                   </tr>
                 </table>
-                <a href="###"></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScrufr5hGxmgwazn0mhqcSpTSTzrvNFl2_5pe2NwXeKsCDQTg/viewform?c=0&w=1"></a>
               </div>
             </div>
           </div>
@@ -447,6 +472,14 @@
                     <td>聯絡電話:</td>
                     <td>學校 04-26222116</td>
                   </tr>
+                  <tr>
+                    <td>
+                      <a href="###" class="fb-img"></a>
+                    </td>
+                    <td>
+                      <a href="###" class="ig-img"></a>
+                    </td>
+                  </tr>
                 </table>
               </div>
             </div>
@@ -464,12 +497,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-            </div>
-          </div>
-        </div> -->
         <footer>
           <div class="container">
             <div class="row">
@@ -487,99 +514,16 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-    $(function() {
-      $('#top').click(function() {
-        $('html,body').animate({scrollTop: '0px'}, 800);
-      });
-      $('#news').click(function() {
-        $('html,body').animate({scrollTop: $('.news').offset().top}, 300);
-      });
-      $('#ceremony').click(function() {
-        $('html,body').animate({scrollTop: $('.ceremony').offset().top}, 300);
-      });
-      $('#movie').click(function() {
-        $('html,body').animate({scrollTop: $('.movie').offset().top}, 300);
-      });
-      $('#process').click(function() {
-        $('html,body').animate({scrollTop: $('.process').offset().top}, 300);
-      });
-      $('#activity').click(function() {
-        $('html,body').animate({scrollTop: $('.activity').offset().top}, 300);
-      });
-      $('#contact').click(function() {
-        $('html,body').animate({scrollTop: $('.contact').offset().top}, 300);
-      });
-      $('#information').click(function() {
-        $('html,body').animate({scrollTop: $('.information').offset().top}, 300);
-      });
-    })
+    <script src="./js/main.js"></script>
+    <script>
     $(function(){
-        // 先取得 #cart 及其 top 值
-        var $cart = $('#nav-wrapper'),
-          _top = $cart.offset().top = 10;
-        // 當網頁捲軸捲動時
-        var $win = $(window).scroll(function(){
-          // 如果現在的 scrollTop 大於原本 #cart 的 top 時
-          if($win.scrollTop() >= _top){
-            // 如果 $cart 的座標系統不是 fixed 的話
-            if($cart.css('position')!='fixed'){
-              // 設定 #cart 的座標系統為 fixed
-              $cart.animate({height:"3%"},500);
-              $cart.css({
-                position: 'fixed',
-                top: 0,
-                background: '#000',
-                'border-color': '#EEE',
-                'border-weight': '0.5px',
-                'border-style': 'solid'
-              });
-            }
-          }else{
-            // 還原 #cart 的座標系統為 absolute
-            $cart.animate({height:"-3%"},500);
-            $cart.css({
-               position: 'absolute',
-               background: 'transparent',
-               'border-color': 'transparent'
-            });
-          }
-        });
+      // 幫 a.abgne_gotoheader 加上 click 事件
+      $('a.abgne_gotoheader').click(function(){
+        // 讓捲軸移動到 0 的位置
+        $('html, body').scrollTop(0);
+        return false;
+      });
     });
-      // $('body').scrollspy({ target: '#navbar-ifo' })
-      // function changeClass(getValue) {
-      //   var maxIndex = 7;
-      //   for(x=0; x<maxIndex; x++) {
-      //    if(x == getValue){
-      //     $('#gradinfo_' + x).addClass('active');
-      //    }else{
-      //     $('#gradinfo_' + x).removeClass('active');
-      //    }
-      //   }
-      // }
-
-      // $('body').scrollspy({ target: '#navbar-example' })
-      // $('[data-spy="scroll"]').each(function () {
-      //   var $spy = $(this).scrollspy('refresh')
-      // })
-
-      // $(function(){
-      //   removeSection = function(e) {
-      //   $(e).parents(".section").remove();
-      //   $('[data-spy="scroll"]').each(function () {
-      //     var $spy = $(this).scrollspy('refresh')
-      //     });
-      // }
-      // $("#myScrollspy").scrollspy();
-
-      // $(function() {
-        // for(var i =1; i<=6; i++) {
-        //   console.log($('#gradinfo_'+ i));
-        //   $('#gradinfo_'+ i).click(function() {
-        //     $('html,body').animate({scrollTop:$('#gradinfo_'+ i).top},800);
-        //   });
-        // }
-      // })
     </script>
   </body>
 </html>
